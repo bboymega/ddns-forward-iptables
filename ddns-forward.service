@@ -1,0 +1,12 @@
+[Unit]
+Description=DDNS Port Forward Service
+After=network.target
+
+[Service]
+ExecStart=/usr/local/ddns-forward.sh
+WorkingDirectory=/usr/local
+Environment=PATH=/usr/bin:/usr/local/bin
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
