@@ -23,7 +23,7 @@ while true; do
             PROTOS_TO_APPLY=("$PROTO")
         fi
 
-        CACHE_FILE="/tmp/ip_cache_${LOCAL_IP}_${LOCAL_PORT}_${PROTO}.txt"
+        CACHE_FILE="/var/run/ip_cache_${LOCAL_IP}_${LOCAL_PORT}_${PROTO}.txt"
         CURRENT_IP=$(dig +short "$REMOTE_DOMAIN" | tail -n1)
 
         if [ -z "$CURRENT_IP" ]; then
