@@ -24,15 +24,17 @@ Useful when:
 
 Forwarding rules are defined in the FORWARDS array as follows:
 
-`REMOTE_DOMAIN | REMOTE_PORT | LOCAL_IP | LOCAL_PORT | PROTOCOL`
+`REMOTE_TARGET | REMOTE_PORT | LOCAL_TARGET | LOCAL_PORT | PROTOCOL`
+
+TARGETS can be Domain names, Hostnames, or raw IP addresses.
 
 ### Fields
 
 | Field         | Description                                  | Example            |
 |--------------|----------------------------------------------|--------------------|
-| REMOTE_DOMAIN | Domain name to resolve (e.g., DDNS hostname) | `host.example.com` |
+| REMOTE_TARGET | Domain name to resolve (e.g., DDNS hostname) | `host.example.com` |
 | REMOTE_PORT   | Port to accept traffic on                    | `8080`             |
-| LOCAL_IP      | Internal destination IP                      | `192.168.1.10`     |
+| LOCAL_TARGET      | Internal destination                      | `192.168.1.10`     |
 | LOCAL_PORT    | Internal destination port                    | `8080`             |
 | PROTOCOL      | Protocol to forward (`tcp`, `udp`, or `both`) | `tcp`              |
 
