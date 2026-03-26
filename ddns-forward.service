@@ -3,10 +3,14 @@ Description=DDNS Port Forward Service
 After=network.target
 
 [Service]
-ExecStart=/usr/local/ddns-forward.sh
-WorkingDirectory=/usr/local
+Type=simple
+ExecStart=/etc/ddns-forward.sh
+ExecReload=/etc/ddns-forward.sh --reload
+ExecStop=/etc/ddns-forward.sh --clean
+WorkingDirectory=/etc
 Environment=PATH=/usr/bin:/usr/local/bin
 Restart=always
+RestartSec=2
 
 [Install]
 WantedBy=multi-user.target
