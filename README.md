@@ -39,12 +39,7 @@ TARGETS can be Domain names, Hostnames, or raw IP addresses.
 | PROTOCOL      | Protocol to forward (`tcp`, `udp`, or `both`) | `tcp`              |
 
 ### Example Configuration
-```
-FORWARDS=(
-    "udp.example.com|8080|1.2.3.4|8080|udp"
-    "api.example.com|8443|1.2.3.4|8443|tcp"
-)
-```
+See ddns-forward.ini
 
 This will create the following forwarding rules:
 
