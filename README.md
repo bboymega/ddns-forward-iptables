@@ -45,8 +45,8 @@ This will create the following forwarding rules:
 
 | Domain          | Remote Port | Local Target | Protocol |
 |-----------------|-------------|--------------|----------|
-| udp.example.com | 8080        | 1.2.3.4:8080 | UDP      |
-| api.example.com | 8443        | 1.2.3.4:8443 | TCP      |
+| mytcp.example.com | 7000        | 1.2.3.4:7000 | UDP      |
+| myudp.example.com | 2096        | 1.2.3.4:2096 | TCP      |
 
 ### Protocol Options
 
