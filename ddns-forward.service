@@ -1,16 +1,15 @@
 [Unit]
-Description=DDNS Port Forward Service
-After=network.target
-
+Description=DDNS Port Forwarding Daemon
+After=network.target network-online.target
+Wants=network-online.target
 [Service]
 Type=simple
-ExecStart=/etc/ddns-forward.sh
-ExecReload=/etc/ddns-forward.sh --reload
-ExecStop=/etc/ddns-forward.sh --clean
-WorkingDirectory=/etc
-Environment=PATH=/usr/bin:/usr/local/bin
-Restart=always
-RestartSec=2
-
+ExecStart=/usr/local/bin/ddns-forward -c /etc/ddns-forward.ini -i 30
+ExecStop=/usr/local/bin/ddns-forward -c /etc/ddns-forward.ini --clean
+Restart=on-failure
+RestartSec=5s
+# Basic Security Hardening
+ProtectSystem=full
+ProtectHome=true
 [Install]
 WantedBy=multi-user.target
